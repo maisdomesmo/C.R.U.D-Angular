@@ -1,0 +1,65 @@
+<div id="book">
+
+  <div  id="overflow" class="col-a">
+
+    <div class="card">
+      <h3>Filtro</h3>
+      <br>
+      <label for="min">De:</label>
+      <input step="10" name="min" #min type="number">
+      <label for="max">Até:</label>
+      <input step="10" name="max" #max type="number">
+
+      <br>
+      <button (click)="filtrar(min.value, max.value)" >Filtrar</button>
+    </div>
+    <h3 class="text-center" >Carrinho:</h3>
+    <table *ngIf="choosedBooks.length"  class="table">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th colspan="2" scope="col">Nome</th>
+          <th scope="col">Preço</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let book of choosedBooks">
+          <th scope="row">{{book.id}}</th>
+          <td colspan="2">{{book.name}}</td>
+          <td>{{book.price}}</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <th scope="col" colspan="3">Total:</th>
+        <td>{{total}}</td>
+      </tfoot>
+    </table>
+
+
+  </div>
+
+  <div class="col-b">
+
+    <div [ngStyle]="{display: book.price >= minfilter && book.price <= maxfilter ? 'flex':'none' }" *ngFor="let book of books" >
+      <div  class="card" (click)="chooseBook(book)"  [ngStyle]="{border: book.choose ? '3px outset black' : 'none'}" style="width: 12rem;">
+        <img src="{{book.img}}" class="card-img-top" style="width: 12rem; height: 12rem" alt="...">
+        <div class="card-body">
+          <h3 class="">{{book.name}}</h3>
+          <span>Preço: {{book.price}}</span>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+
+  <footer>
+    <span>Develepoded by: João Pedro</span>
+    <div class="links">
+      <a href="https://www.instagram.com/tenorio0212/">Intagram</a>
+      <a href="https://www.facebook.com/joaopedro.tenorioalmeida/">Facebook</a>
+      <a href="https://github.com/maisdomesmo">GitHub</a>
+    </div>
+  </footer>
+
+</div>

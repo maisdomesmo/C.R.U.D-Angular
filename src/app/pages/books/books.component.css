@@ -1,0 +1,67 @@
+#book{
+  display: grid;
+  grid-template-columns: 2fr 10fr;
+  grid-template-areas: 'A B' 'C C';
+  margin-left: -12px;
+  padding: 0;
+  width: 100vw;
+  overflow: hidden;
+}
+#overflow{
+  overflow-y: scroll;
+}
+
+.col-a{
+  grid-area: A;
+  height: 80vh;
+
+}
+
+.col-b{
+  grid-area: B;
+  background-color: hsla(175, 51%, 23%, 0.884);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: start;
+  align-items: center;
+  overflow-y: scroll;
+  height: 80vh;
+  padding-top: 20px;
+  padding-left: 50px;
+}
+
+
+
+.col-a .card {
+  padding: 20px;
+
+}
+.col-b .card{
+  overflow: hidden;
+  height: 20rem;
+}
+
+footer{
+  background-color:#212529;
+  grid-area: C;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+  color: white;
+}
+footer .links {
+  display: flex;
+  justify-content: space-between;
+  width: 20vw;
+}
+footer .links a{
+  text-decoration: none;
+  color: white;
+}
+footer .links a:hover{
+  opacity: 0.8;
+}
+

@@ -1,0 +1,42 @@
+#span{
+  width: 60vw;
+}
+label{
+  display: flex;
+}
+
+.button{
+  width: 10vw;
+  display: flex;
+  justify-content: end;
+}
+.chk span {
+  width: 24px;
+  height: 24px;
+  display: block;
+  background-color: #fff;
+  border: 1px solid #DDD;
+  margin-inline: 25px;
+  transition: transform 0.5s;
+}
+.chk input:checked + span {
+  transform: matrix(0.866,0.7,-1,0.866,0,0) rotateY(50deg) ;
+  transition: transform 0.5s;
+  border: 2px solid green;
+  border-top: none;
+  border-left: none;
+}
+
+
+input{
+  margin-right: 10px;
+  opacity: 0;
+  display: none;
+  visibility: hidden;
+  transform: scale(2);
+}
+
+input:checked {
+  display: none;
+
+}
